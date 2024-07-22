@@ -9,6 +9,7 @@ function BlogList() {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortType, setSortType] = useState("date");
 
+
   const addBlog = (newBlog) => {
     const id = blogs.length + 1;
     setBlogs([...blogs, { ...newBlog, id }]);
