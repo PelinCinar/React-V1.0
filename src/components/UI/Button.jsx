@@ -6,7 +6,7 @@ function Button(props) {
 
   const btnClassNames = `btn btn-${color} btn-${size} ${addClass ? addClass :""}`;
 
-  return <button className={btnClassNames} onClick={onClick}>{children}</button>;
+  return <button className={btnClassNames} onClick={onClick} >{children}</button>;
 }
 
 Button.propTypes = {

@@ -4,13 +4,47 @@ import "./AddNewBlog.css";
 import PropTypes from "prop-types";
 import BlogInput from "./BlogInput";
 
-const AddNewBlog = ({ addBlog }) => {
+const blogInputs = [
+  {
+    label: "Başlık:",
+    type: "text",
+    placeholder: "Blog başlığı giriniz..",
+    name: "title",
+  },
+  {
+    label: "Yazar:",
+    type: "text",
+    placeholder: "Yazar adı giriniz..",
+    name: "author",
+  },
+  {
+    label: "Resim Url:",
+    type: "text",
+    placeholder: "Blog görseli giriniz..",
+    name: "image",
+  },
+  {
+    label: "Açıklama:",
+    type: "text",
+    placeholder: "Blog açıklaması giriniz..",
+    name: "info",
+  },
+  {
+    label: "Date:",
+    type: "date",
+    placeholder: "Blog tarihi giriniz..",
+    name: "date",
+  },
+];
+
+const AddNewBlog = ({addBlog }) => {
   const [blogData, setBlogData] = useState({
     title: "",
     image: "",
     info: "",
     date: "",
-  });
+    author:""
+  });//AddnewBlogtan içindeki inputlardan değeri alıyoruz yani state olark blogData
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,38 +58,7 @@ const AddNewBlog = ({ addBlog }) => {
     addBlog(blogData); 
     setBlogData({ title: "", image: "", info: "", date: "" });}
 
-  const blogInputs = [
-    {
-      label: "Başlık:",
-      type: "text",
-      placeholder: "Blog başlığı giriniz..",
-      name: "title",
-    },
-    {
-      label: "Yazar:",
-      type: "text",
-      placeholder: "Yazar adı giriniz..",
-      name: "author",
-    },
-    {
-      label: "Resim Url:",
-      type: "text",
-      placeholder: "Blog görseli giriniz..",
-      name: "image",
-    },
-    {
-      label: "Açıklama:",
-      type: "text",
-      placeholder: "Blog açıklaması giriniz..",
-      name: "info",
-    },
-    {
-      label: "Date:",
-      type: "text",
-      placeholder: "Blog tarihi giriniz..",
-      name: "date",
-    },
-  ];
+
   return (
     <div className="form-container">
       <form className="blog-form" onSubmit={handleSubmit}>

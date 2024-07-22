@@ -42,6 +42,21 @@
     width: 100%;
     box-sizing: border-box;
   
-  
   }
+  .search-sort-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .search-sort-container input {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .search-sort-container select {
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
   
