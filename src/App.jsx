@@ -5,7 +5,7 @@ import { blogData } from './data/blogData';
 function App () {
   
   return (
-    <div className='app'>
+    <div className="app ">
          <Header />
       <BlogList blogs={blogData}/>
       
