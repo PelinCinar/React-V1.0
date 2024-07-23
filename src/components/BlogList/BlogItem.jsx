@@ -48,6 +48,7 @@ function BlogItem({ blog, updateBlog, deleteBlog }) {
             placeholder="Yazar"
           />
           <textarea
+            type="textarea-wide"
             name="info"
             value={editData.info}
             onChange={handleInputChange}
@@ -55,7 +56,7 @@ function BlogItem({ blog, updateBlog, deleteBlog }) {
             rows={4}
           />
           <input
-            className="textarea-wide"
+            className="blog-date"
             type="date"
             name="date"
             value={editData.date}
@@ -78,6 +79,7 @@ function BlogItem({ blog, updateBlog, deleteBlog }) {
         <>
           <div className="blog-image">
             <img src={blog.image} alt={blog.title} />
+            
           </div>
           <strong className="blog-title">{blog.title}</strong>
           <div className="container">
@@ -85,6 +87,7 @@ function BlogItem({ blog, updateBlog, deleteBlog }) {
               {blog.info}
               <div className="blog-author">{blog.author}</div>
               <div className="blog-date">{blog.date}</div>
+              <div className="btn">
               <Button
                 color="primary"
                 size="lg"
@@ -95,6 +98,7 @@ function BlogItem({ blog, updateBlog, deleteBlog }) {
               <Button color="danger" size="lg" onClick={handleDeleteClick}>
                 Sil
               </Button>
+              </div>
             </div>
           </div>
         </>

@@ -2,7 +2,10 @@
     .form-container {
       background-color: #b86767;
       padding: 25px 30px;
+    
       }
+
+    
   }
   
   .blog-form {
@@ -13,16 +16,19 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    
   }
   
   .blog-input {
-    display: flex;
-    flex-direction: column; /* Etiket ve girdi elemanlarını dikey olarak düzenler */
+   
     margin-right: 15px; /* Girdi elemanları arasına boşluk ekler */
   }
   
   .blog-input label {
     margin-bottom: 5px;
+    width: 15%;
+    display: flex;
+    align-items: center;
   }
   
   .blog-input input,
@@ -30,6 +36,8 @@
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    
+    
   }
   
   button {

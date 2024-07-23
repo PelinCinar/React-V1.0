@@ -6,6 +6,9 @@
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    gap: 10px;
+    justify-content:right;
   }
   
   /* Primary button */

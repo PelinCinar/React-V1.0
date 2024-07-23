@@ -2,7 +2,7 @@ export const blogData = [
     {
       id: 1,
       image: "https://i.pinimg.com/236x/4b/d6/c6/4bd6c6ed558ad843a8400f55a0c74122.jpg",
-      title: "A ile Blog Yönetim Uygulaması Geliştirme",
+      title: "A ile Blog Yönetim Uygulaması Geliştirme A ile Blog Yönetim Uygulaması Geliştirme A ile Blog Yönetim Uygulaması Geliştirme A ile Blog Yönetim Uygulaması Geliştirme",
       date: "2024-07-01",
       author: "Jane Doe",
       info: "Bu makalede, React kullanarak basit bir blog yönetim uygulaması geliştirme adımlarını öğreneceksiniz. Proje yapısı, bileşenler, veri yönetimi ve stil oluşturma konularına değineceğiz.",

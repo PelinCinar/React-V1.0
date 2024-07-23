@@ -48,6 +48,8 @@ function BlogList() {
 
   return (
     <div className="blog">
+      
+      <AddNewBlog addBlog={addBlog} />
       <div className="search-sort-container">
         <input
           type="text"
@@ -60,7 +62,7 @@ function BlogList() {
           <option value="az">A- Zye Sırala</option>
         </select>
       </div>
-      <AddNewBlog addBlog={addBlog} />
+      
       <div className="blog-wrapper">
         {filteredBlogs.map((blog) => (
           <BlogItem
@@ -76,6 +78,7 @@ function BlogList() {
           />
         ))}
       </div>
+      
     </div>
   );
 }

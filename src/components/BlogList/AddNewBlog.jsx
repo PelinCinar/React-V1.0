@@ -25,7 +25,7 @@ const blogInputs = [
   },
   {
     label: "Açıklama*:",
-    type: "text",
+    type: "textarea-wide",
     placeholder: "Blog açıklaması giriniz..",
     name: "info",
   },
