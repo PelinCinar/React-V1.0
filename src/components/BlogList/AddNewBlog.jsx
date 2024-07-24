@@ -3,7 +3,7 @@ import Button from "../UI/Button";
 import "./AddNewBlog.css";
 import PropTypes from "prop-types";
 import BlogInput from "./BlogInput";
-import Modal from '../UI/Modal'
+import Modal from "../UI/Modal";
 
 const blogInputs = [
   {
@@ -46,11 +46,9 @@ const AddNewBlog = ({ addBlog }) => {
     date: "",
     author: "",
   }); //AddnewBlogtan içindeki inputlardan değeri alıyoruz yani state olark blogData
-    
+
   const [isShowModal, setIsShowModal] = useState(false);
 
-
-  
   // console.log(Object.values(blogData));
 
   const handleChange = (e) => {
@@ -58,12 +56,10 @@ const AddNewBlog = ({ addBlog }) => {
     setBlogData({ ...blogData, [name]: value });
   };
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
     addBlog(blogData);
     setBlogData({ title: "", image: "", info: "", date: "", author: "" }); // Inputları temizle
-   
   };
 
   function onSubmit(event) {
@@ -71,8 +67,8 @@ const AddNewBlog = ({ addBlog }) => {
     const isFormValid = Object.values(blogData).every(
       (value) => value.trim() !== ""
     );
-    if (!isFormValid){
-      console.error("İNPUT ALANI BOŞ GEÇİLEMEZ");
+    if (!isFormValid) {
+      setIsShowModal(true);
       return;
     }
     handleSubmit(event);
@@ -80,19 +76,24 @@ const AddNewBlog = ({ addBlog }) => {
 
   return (
     <>
-    <div className="form-container">
-      <form className="blog-form" onSubmit={onSubmit}>
-        {blogInputs.map((input, index) => (
-          <BlogInput key={index} {...input} handleChange={handleChange} />
-        ))}
+      <div className="form-container">
+        <form className="blog-form" onSubmit={onSubmit}>
+          {blogInputs.map((input, index) => (
+            <BlogInput key={index} {...input} handleChange={handleChange} />
+          ))}
 
-        <Button size="lg" color="success" type="submit">
-          Ekle
-        </Button>
-      </form>
-  
-    </div>
-   {isShowModal && <Modal/>} 
+          <Button size="lg" color="success" type="submit">
+            Ekle
+          </Button>
+        </form>
+      </div>
+      {isShowModal && (
+        <Modal
+          setIsShowModal={setIsShowModal}
+          title="Form Kontrol"
+          desc="Input alanları boş geçilemez"
+        />
+      )}
     </>
   );
 };
