@@ -19,13 +19,15 @@ function BlogItem({ blog, updateBlog, deleteBlog }) {
   };
 
   const handleDeleteClick = () => {
-    deleteBlog(blog.id); 
+    deleteBlog(blog.id);
   };
 
   return (
     <div className="blog-item">
       {isEditing ? (
         <form className="blog-edit-form" onSubmit={handleSaveClick}>
+          
+          <label htmlFor="title">Başlık:</label>
           <input
             type="text"
             name="title"
@@ -33,6 +35,8 @@ function BlogItem({ blog, updateBlog, deleteBlog }) {
             onChange={handleInputChange}
             placeholder="Başlık"
           />
+          <label htmlFor="image">ResimURL:</label>
+
           <input
             type="text"
             name="image"
@@ -40,6 +44,8 @@ function BlogItem({ blog, updateBlog, deleteBlog }) {
             onChange={handleInputChange}
             placeholder="Resim URL"
           />
+          <label htmlFor="author">Yazar:</label>
+
           <input
             type="text"
             name="author"
@@ -47,6 +53,8 @@ function BlogItem({ blog, updateBlog, deleteBlog }) {
             onChange={handleInputChange}
             placeholder="Yazar"
           />
+          <label htmlFor="info">Açıklama:</label>
+
           <textarea
             type="textarea-wide"
             name="info"
@@ -55,6 +63,7 @@ function BlogItem({ blog, updateBlog, deleteBlog }) {
             placeholder="Bilgi"
             rows={4}
           />
+
           <input
             className="blog-date"
             type="date"
@@ -79,7 +88,6 @@ function BlogItem({ blog, updateBlog, deleteBlog }) {
         <>
           <div className="blog-image">
             <img src={blog.image} alt={blog.title} />
-            
           </div>
           <strong className="blog-title">{blog.title}</strong>
           <div className="container">
@@ -88,16 +96,16 @@ function BlogItem({ blog, updateBlog, deleteBlog }) {
               <div className="blog-author">{blog.author}</div>
               <div className="blog-date">{blog.date}</div>
               <div className="btn">
-              <Button
-                color="primary"
-                size="lg"
-                onClick={() => setIsEditing(true)}
-              >
-                Düzenle
-              </Button>
-              <Button color="danger" size="lg" onClick={handleDeleteClick}>
-                Sil
-              </Button>
+                <Button
+                  color="primary"
+                  size="lg"
+                  onClick={() => setIsEditing(true)}
+                >
+                  Düzenle
+                </Button>
+                <Button color="danger" size="lg" onClick={handleDeleteClick}>
+                  Sil
+                </Button>
               </div>
             </div>
           </div>

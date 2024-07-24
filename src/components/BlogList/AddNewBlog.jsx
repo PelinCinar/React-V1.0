@@ -3,6 +3,7 @@ import Button from "../UI/Button";
 import "./AddNewBlog.css";
 import PropTypes from "prop-types";
 import BlogInput from "./BlogInput";
+import Modal from '../UI/Modal'
 
 const blogInputs = [
   {
@@ -45,8 +46,12 @@ const AddNewBlog = ({ addBlog }) => {
     date: "",
     author: "",
   }); //AddnewBlogtan içindeki inputlardan değeri alıyoruz yani state olark blogData
+    
+  const [isShowModal, setIsShowModal] = useState(false);
 
-  console.log(Object.values(blogData));
+
+  
+  // console.log(Object.values(blogData));
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -57,7 +62,8 @@ const AddNewBlog = ({ addBlog }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     addBlog(blogData);
-    setBlogData({ title: "", image: "", info: "", date: "" });
+    setBlogData({ title: "", image: "", info: "", date: "", author: "" }); // Inputları temizle
+   
   };
 
   function onSubmit(event) {
@@ -73,6 +79,7 @@ const AddNewBlog = ({ addBlog }) => {
   }
 
   return (
+    <>
     <div className="form-container">
       <form className="blog-form" onSubmit={onSubmit}>
         {blogInputs.map((input, index) => (
@@ -83,7 +90,10 @@ const AddNewBlog = ({ addBlog }) => {
           Ekle
         </Button>
       </form>
+  
     </div>
+   {isShowModal && <Modal/>} 
+    </>
   );
 };
 
