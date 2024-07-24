@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import Button from "../UI/Button";
 import "./AddNewBlog.css";
 import PropTypes from "prop-types";
@@ -75,7 +75,7 @@ const AddNewBlog = ({ addBlog }) => {
   }
 
   return (
-    <>
+    <Fragment>
       <div className="form-container">
         <form className="blog-form" onSubmit={onSubmit}>
           {blogInputs.map((input, index) => (
@@ -94,7 +94,7 @@ const AddNewBlog = ({ addBlog }) => {
           desc="Input alanları boş geçilemez"
         />
       )}
-    </>
+    </Fragment>
   );
 };
 
