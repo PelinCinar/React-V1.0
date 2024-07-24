@@ -1,14 +1,16 @@
 import { useState } from "react";
+// import Spinner from "../UI/Spinner";
 import BlogItem from "./BlogItem";
 import { blogData as initialBlogData } from "../../data/blogData";
 import AddNewBlog from "./AddNewBlog";
 import "./BlogList.css";
 
+
 function BlogList() {
   const [blogs, setBlogs] = useState(initialBlogData);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortType, setSortType] = useState("date");
-
+  // const [isShowLoading, setShowLoading] = useState(false)
 
   const addBlog = (newBlog) => {
     const id = blogs.length + 1;
@@ -46,11 +48,18 @@ function BlogList() {
       return 0;
     });
 
+  // function fetchBlogs() {
+  //   fetch("http://fakestoreapi.com/products/")
+  //     .then((res) => res.json())
+  //     .then((data) => setBlogs(data));
+  // }//setBogs ta dizin yapmalıyız ki çalışsın.
+  
   return (
     <div className="blog">
-      
+      {/* <button onClick={fetchBlogs} className="btn-primary ">OKEİİ LES GO</button> */}
       <AddNewBlog addBlog={addBlog} />
       <div className="search-sort-container">
+
         <input
           type="text"
           placeholder="Search..."
@@ -62,8 +71,8 @@ function BlogList() {
           <option value="az">A- Zye Sırala</option>
         </select>
       </div>
-      
       <div className="blog-wrapper">
+      {/* {isShowLoading && <Spinner/>} */}
         {filteredBlogs.map((blog) => (
           <BlogItem
             key={blog.id}
@@ -78,7 +87,6 @@ function BlogList() {
           />
         ))}
       </div>
-      
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import './BlogInput.css'
 
-function BlogInput({ handleChange, label, placeholder, name, type }) {
+function BlogInput({ handleChange, label, placeholder, name, type, value }) {
   return (
     <div className="blog-input">
       <label>{label}</label>
@@ -11,6 +11,7 @@ function BlogInput({ handleChange, label, placeholder, name, type }) {
           placeholder={placeholder}
           name={name}
           className="textarea-wide"
+          value={value}
         />
       ) : (
         <input
@@ -18,6 +19,7 @@ function BlogInput({ handleChange, label, placeholder, name, type }) {
           onChange={handleChange}
           placeholder={placeholder}
           name={name}
+          value={value}
         />
       )}
     </div>
@@ -30,6 +32,7 @@ BlogInput.propTypes = {
   placeholder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default BlogInput;

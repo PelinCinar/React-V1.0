@@ -18,7 +18,7 @@
   }
   
   .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: #91702a;
   }
   
   /* Secondary button */
@@ -33,22 +33,22 @@
   
   /* Success button */
   .btn-success {
-    background-color: #28a745;
+    background-color: #1fbd51;
     color: white;
   }
   
   .btn-success:hover {
-    background-color: #218838;
+    background-color: #479f2c90;
   }
   
   /* Danger button */
   .btn-danger {
-    background-color: #dc3545;
+    background-color: #e43e4f;
     color: white;
   }
   
   .btn-danger:hover {
-    background-color: #c82333;
+    background-color: #822d35;
   }
   
   /*? Size variants */

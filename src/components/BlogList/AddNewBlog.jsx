@@ -45,11 +45,9 @@ const AddNewBlog = ({ addBlog }) => {
     info: "",
     date: "",
     author: "",
-  }); //AddnewBlogtan içindeki inputlardan değeri alıyoruz yani state olark blogData
+  });
 
   const [isShowModal, setIsShowModal] = useState(false);
-
-  // console.log(Object.values(blogData));
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -62,7 +60,7 @@ const AddNewBlog = ({ addBlog }) => {
     setBlogData({ title: "", image: "", info: "", date: "", author: "" }); // Inputları temizle
   };
 
-  function onSubmit(event) {
+  const onSubmit = (event) => {
     event.preventDefault();
     const isFormValid = Object.values(blogData).every(
       (value) => value.trim() !== ""
@@ -72,16 +70,20 @@ const AddNewBlog = ({ addBlog }) => {
       return;
     }
     handleSubmit(event);
-  }
+  };
 
   return (
     <Fragment>
       <div className="form-container">
         <form className="blog-form" onSubmit={onSubmit}>
           {blogInputs.map((input, index) => (
-            <BlogInput key={index} {...input} handleChange={handleChange} />
+            <BlogInput
+              key={index}
+              {...input}
+              handleChange={handleChange}
+              value={blogData[input.name] || ""}//value propu geçirdik
+            />
           ))}
-
           <Button size="lg" color="success" type="submit">
             Ekle
           </Button>
@@ -100,7 +102,6 @@ const AddNewBlog = ({ addBlog }) => {
 
 AddNewBlog.propTypes = {
   addBlog: PropTypes.func.isRequired,
-  deleteBlog: PropTypes.func,
 };
 
 export default AddNewBlog;
