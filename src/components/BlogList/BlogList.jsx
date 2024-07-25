@@ -37,7 +37,11 @@ function BlogList() {
 
   const filteredBlogs = blogs
     .filter((blog) =>
-      blog.info.toLowerCase().includes(searchTerm.toLowerCase())
+      blog.info.toLowerCase().includes(searchTerm.toLowerCase()) ||
+     blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+     blog.author.toLowerCase().includes(searchTerm.toLowerCase()) ||
+     blog.date.toLowerCase().includes(searchTerm.toLowerCase()) 
+
     )
     .sort((a, b) => {
       if (sortType === "date") {

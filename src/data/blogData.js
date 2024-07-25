@@ -2,7 +2,7 @@ export const blogData = [
   {
       id: 1,
       image: "https://i.pinimg.com/236x/4b/d6/c6/4bd6c6ed558ad843a8400f55a0c74122.jpg",
-      title: "React ile Blog Yönetimi: Adım Adım Kılavuz",
+      title: "Blog Yönetimi: Adım Adım Kılavuz",
       date: "2024-07-01",
       author: "Jane Doe",
       info: "Bu makalede, React kullanarak bir blog yönetim uygulaması oluşturmayı adım adım öğreneceksiniz. Proje yapısını ve temel bileşenleri keşfedin.",
@@ -47,7 +47,7 @@ export const blogData = [
   {
       id: 6,
       image: "https://i.pinimg.com/564x/8b/bc/31/8bbc3169e91d25fdd43f9b31306917ee.jpg",
-      title: "React'te Asenkron İşlemler ve API Entegrasyonu",
+      title: "Asenkron İşlemler ve API Entegrasyonu",
       date: "2024-07-25",
       author: "Alex Green",
       info: "Bu makalede, React'te asenkron işlemleri ve API entegrasyonunu nasıl yapacağınızı öğreneceksiniz. Veri çekme ve yönetme konularını keşfedin.",
@@ -56,7 +56,7 @@ export const blogData = [
   {
       id: 7,
       image: "https://i.pinimg.com/564x/af/0a/c1/af0ac11173161047100eba68e6e1f318.jpg",
-      title: "React ile Stil Yönetimi: CSS ve Stil Kütüphaneleri",
+      title: "Stil Yönetimi: CSS ve Stil Kütüphaneleri",
       date: "2024-07-30",
       author: "Laura White",
       info: "React projelerinde stil yönetimi için farklı yöntemleri ve stil kütüphanelerini nasıl kullanabileceğinizi öğrenin.",
