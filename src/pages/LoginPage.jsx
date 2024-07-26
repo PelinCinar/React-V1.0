@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-
+import * as Yup from "yup";
 const LoginPage = () => {
   const formik = useFormik({
     initialValues: {
@@ -7,6 +7,14 @@ const LoginPage = () => {
       password: "",
       remember_me: false,
     },
+    validationSchema: Yup.object({
+      email: Yup.string()
+        .required("Zorunlu alan!")
+        .email("Geçerli bir e-mail giriniz!"),
+      password: Yup.string()
+        .required("Zorunlu alan!")
+        .min(6, "Şifre en az 6 karakter olmalı"),
+    }),
     onSubmit: (values, { resetForm }) => {
       console.log(values);
       resetForm();
@@ -19,6 +27,7 @@ const LoginPage = () => {
         <form className="mt-8 space-y-6" onSubmit={formik.handleSubmit}>
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
+              <h1>Email</h1>
               <label htmlFor="email" className="sr-only">
                 Email address
               </label>
@@ -27,13 +36,20 @@ const LoginPage = () => {
                 name="email"
                 onChange={formik.handleChange}
                 value={formik.values.email}
+                onBlur={formik.handleBlur}
                 type="email"
                 autoComplete="email"
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Email address"
+                // placeholder="Email address"
               />
+              {formik.touched.email && formik.errors.email && (
+                <span className="text-red-500 font-semibold text-sm">
+                  {formik.errors.email}
+                </span>
+              )}
             </div>
             <div>
+              <h1>Password</h1>
               <label htmlFor="password" className="sr-only">
                 Password
               </label>
@@ -42,11 +58,17 @@ const LoginPage = () => {
                 name="password"
                 onChange={formik.handleChange}
                 value={formik.values.password}
+                onBlur={formik.handleBlur}
                 type="password"
                 autoComplete="current-password"
                 className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                placeholder="Password"
+                // placeholder="Password"
               />
+              {formik.touched.password && formik.errors.password && (
+                <span className="text-red-500 font-semibold text-sm">
+                  {formik.errors.password}
+                </span>
+              )}
             </div>
           </div>
           <div className="flex items-center justify-between">
