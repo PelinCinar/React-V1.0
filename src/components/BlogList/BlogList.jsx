@@ -80,6 +80,7 @@ function BlogList() {
         {filteredBlogs.map((blog) => (
           <BlogItem
             key={blog.id}
+            id={blog.id}
             image={blog.image}
             title={blog.title}
             info={blog.info}
@@ -88,6 +89,7 @@ function BlogList() {
             updateBlog={updateBlog}
             deleteBlog={deleteBlog}
             blog={blog}
+            blogs={blogs}
           />
         ))}
       </div>
