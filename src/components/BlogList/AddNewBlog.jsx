@@ -87,7 +87,7 @@ const AddNewBlog = ({ addBlog }) => {
           <Button size="lg" color="success" type="submit">
             Ekle
           </Button>
-        </form>
+        </form> 
       </div>
       {isShowModal && (
         <Modal
