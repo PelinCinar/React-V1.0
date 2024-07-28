@@ -12,7 +12,7 @@ function Button(props) {
 Button.propTypes = {
   color: PropTypes.oneOf(["primary", "secondary", "success", "danger"])
     .isRequired,
-  size: PropTypes.oneOf(["sm", "md", "lg"]).isRequired,
+  size: PropTypes.oneOf(["sm", "md", "lg"]),
   addClass: PropTypes.string,
   title: PropTypes.string,
   children: PropTypes.node.isRequired,
